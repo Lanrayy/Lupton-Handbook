@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Back button -->
+    <div class="">
+        <form method="post" class="menu-button">
+            <button type="submit" name="button" value="back" class="back-btn">&lt Back</button>
+        </form>
+    </div>
+
+    <!-- Page title -->
+    <div>
+        <h2 class="subtitle">{{page_title}}</h2>
+    </div>
+    <!-- Page content -->
+    
+    <!-- <div>
+        <p class="page-content">{{page_content}}</p>
+    </div> -->
+
+    <div class="page-content">
+        {{ page_content|markdown}}
+    </div>
+    
+
+{% endblock %}

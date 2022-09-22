@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Back button -->
+    <div class="">
+        <form method="post" class="menu-button">
+            <button type="submit" name="button" value="back" class="back-btn"> &lt Back</button>
+        </form>
+    </div>
+    <!-- Page title -->
+    <div class="container">
+        <h2 class="subtitle">{{page_title}}</h2>
+    </div>
+    <p>{{page_content}}</p>
+    <!-- <p class="breadcrumbs">Home &gt Sub Menu</p> -->
+
+
+    <div class="button-container">
+        {%for i in range(0, len)%}
+        <div class="">
+            <form method="post" class="menu-button">
+                <button type="submit" name="button" value={{values[i]}} class="menu-btn"> {{button_text[i]}} </button>
+            </form>
+        </div>
+        {% endfor %}
+
+    </div>
+    
+
+{% endblock %}
