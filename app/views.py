@@ -35,9 +35,7 @@ def submenu():
     button_text = get_pages(session["menu_requested"])[1] # Button label
     page_title = get_pages(session["menu_requested"])[2]
 
-    
     # flash(values)
-
     # If user clicks the back to homepage button buttton
     if request.method == 'POST':
         try:
@@ -114,9 +112,6 @@ def info():
                             title = "Lupton Handbook",
                             page_title = page_title,
                             page_content = page_content)
-
-
-
 
 # ON the info page
 def get_info(key):
@@ -374,7 +369,6 @@ def get_info(key):
                         to the students that they have a cleaning rota."],
         "weapon" : ["Weapon", "If you see or a suspect, there may be a weapon in residence you should immediately call security and notify\
                         your warden. <br> Document the situation on StarRez."],
-
         "intruders" : ["Intruders", "Please keep your eyes open for possible intruders; we have had occasional problems with car vandalism \
                         and break-ins to blocks, and it is vital that everyone should be vigilant. University Security teams regularly \
                         patrol the sites. However, in case of need, telephone University Security. Do (politely) challenge anyone who\
@@ -391,7 +385,6 @@ def get_info(key):
                         Call security and notify them that you’ve seen a stranger in the building. Be mindful of the direction the\
                         person may have travelled to help track them down. If you notice a public disturbance happening outside your\
                         building and the people involved are not students, contact security."],
-
     }
 
     info = switcher.get(key, "Try again! not found")
