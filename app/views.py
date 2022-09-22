@@ -201,7 +201,7 @@ def get_info(key):
                         Blenheim Walk <br>Leeds <br>LS2 9AE <br>0113 295 4488 <br> www.leeds.ac.uk/lsmp/ <br>   You may also find it useful to call NHS \
                         Direct on 111 if you need medical advice. (http://www.nhsdirect.nhs.uk/). Document the incident on Starrez."],
         "over_intoxication": ["Over Intoxication", ""],
-        "recovery_position" : ["Recovery Position", ""],
+        "recovery_position" : ["Recovery Position", "<img src='{{url_for('static', filename='static/images/recovery-position')}}' alt='Main-image' />"],
         "substance_use_concerns":["Substance Use Concerns", "If a student is experiencing misusing substances (i.e., study drugs, drinking \
                         or using cannabis to cope, etc.), take steps to address the concern with the student. This information may come to \
                         you while the student is currently under the influence, or in conversation with the student or another student after \
