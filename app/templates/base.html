@@ -24,6 +24,7 @@
 
   </head>
   <body>
+    <!-- FLASHED MESSAGES -->
     <div >{% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
           <ul class="flashes">
@@ -40,6 +41,7 @@
         <h1 class="app_title">Lupton Handbook</h1>
       </div>
       
+      <!-- Page content -->
       {% block content %}{% endblock %}
 
     <div class="footer">

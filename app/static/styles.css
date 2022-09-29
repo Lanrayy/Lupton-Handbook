@@ -15,6 +15,7 @@ body{
     background-color: #562d77;
 }
 
+/* App title */
 .header-container{
     display: flex;
     width: 100%;
@@ -30,6 +31,7 @@ body{
     font-size: 36px;
 }
 
+/* Page title */
 .subtitle{
     width: 100%;
     margin: 10px 0px 10px 0px;
@@ -45,6 +47,7 @@ body{
     /* border: 2px solid green; */
 }
 
+/* Back button */
 .back-btn {
     border: 1px solid #ffc200;
     height: 35px;
@@ -65,7 +68,7 @@ body{
 }
 
 
-/* Buttons */
+/* Menu Buttons */
 .menu-btn {
     border: 1px solid #562d77;
     height: 90px;
@@ -85,7 +88,6 @@ body{
     color: white;
 }
 
-
 h1, h2, h3 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -97,30 +99,15 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.breadcrumbs {
+
+/* .breadcrumbs {
     font-size: 12px;
     margin-left: 10px;
     width: 100%;
     text-align: center;
-}
-
-.footer{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    /* margin: 10px 0px 10px 0px; */
-    height: 40px;
-}
-
-/* .container {
-    width: 100%;
-    display: flex;
-    align-items: center;
 } */
 
-/* Info page */
+
 
 .page-content {
     width: 100%;
@@ -142,4 +129,16 @@ p {
     background-color: rgb(239, 239, 239);
 }
 
-/* Breakpoint */
+.image{
+    width:100%;
+}
+
+.footer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* margin: 10px 0px 10px 0px; */
+    height: 40px;
+}

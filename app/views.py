@@ -115,7 +115,8 @@ def info():
                             page_content = page_content)
 
 # ON the info page
-def get_info(key):
+# This function is used on the info page, it returns the text for the specific page
+def get_info(page_name):
     switcher = {
         # page info
         "rla_info" : ["Quick Info", "<b><a href='https://leeds365.sharepoint.com/:w:/r/sites/TEAM-ResidenceLife-Lupton/Shared%20Documents/Lupton/\
@@ -125,14 +126,15 @@ def get_info(key):
                         <b> KEYS </b> <br>\
                         3474 - Intruder alarm code (Site office) <br> 8L153/ 948: room master key <br>\
                         550 key: fire key <br> SVS: padlocks around campus (front gate padlock) <br><br> \
-                        <b>SITE PHONE:</b> <br> 0000- phone password <br> Then 83860 <br> (BEN’s ACCOUNT) <br> "],
+                        <b>SITE PHONE:</b> <br> 0000- phone password <br> Then 83860 <br> (BEN’s ACCOUNT) <br> \
+                        <br> <b>SITE MAP<b> <br> <img src='static/images/lupton_sitemap.png' class='image' alt='Lupton-Site-Map' /> "],
         
 
         "lockouts" : ["Lockouts", "If you need to deal with a lock out, before you can let a student back into their \
                         flat, you must confirm that they are who they claim to be (e.g., by viewing their University\
                          student card, student number or any other identification they may have or asking them to describe their \
                         room and cross-checking their personal details with the occupancy list in Teams or records held in \
-                        the Site Office). <br> <b> Don’t simply take their word for it </b>. <br> <br> \
+                        the Site Office). <br> <b> Don’t simply take their word for it. </b> <br> <br> \
                         After confirming they are who they say they are, access the site office and \
                         make a spare for and/or key for the student. \
                         Write their name and student number on a post-it note and place on the hook."],
@@ -158,12 +160,13 @@ def get_info(key):
                         experts deal with the situation. You are not responsible for going through the block to ensure \
                         that all students have evacuated the building, but you should ensure that those that have evacuated \
                         congregate at the designated evacuation point. <br> Once everything has settled and everyone is safe, \
-                        Document the incident on StarRez."],
+                        <b>Document the incident on StarRez.</b>"],
 
 
         "fire_alarm" : ["Fire Alarm", "When the fire alarm goes off, check the buzzer for the block with the right panel. <br> <br> \
-                        Go to the panel and identify the room. Assist student with leaving the building. Wait for security to arrive. \
-                        <br> <br>Document the incident on Starrez."],
+                        Go to the panel and identify the room. Assist students with leaving the building to the assembly point.\
+                        If it is not your rota ’ed night and the alarm sounds, you should call the duty RLA, who will attend and investigate. \
+                         Wait for security to arrive. Once the alarm has been shut off, <br> <b> Document the incident on Starrez. </b>"],
 
 
         "fire_drill": ["Fire Drill", "These are carried out once per term and you may be asked to assist with\
@@ -174,15 +177,15 @@ def get_info(key):
                         real situation because of falling debris) and gather where the instruction sheets in their rooms\
                         tell them is the assembly point and that they stand in their households. When they are all out,\
                         take a roll call. Students may be readmitted to the block and the alarm silenced when the roll\
-                        call is complete. Watch out for people answering with others’ names!. After the drill in completed \
-                        Document the incident on Starrez."],
+                        call is complete. Watch out for people answering with others’ names!. <br>After the drill in completed, \
+                        <b>Document the incident on Starrez. </b>"],
 
 
         "fire_equipment_tampered" : ["Fire Equipment Tampered With", "If you happen to notice that a fire\
                         extinguisher in a flat has been let off or smoke/heat detectors have been covered, you need to\
                         make inquiries into why this has happened and attempt to identify those involved.  It is especially\
                         important to report it to the site office so that extinguishers can be checked and re-filled.\
-                        <br> <br> Document the incident on Starrez."],
+                        <br> <br> <b>Document the incident on Starrez.</b>"],
 
 
         "maintenance": ["Maintenance", "For non-urgent repairs, students should be encouraged to report the matter themselves\
@@ -192,14 +195,14 @@ def get_info(key):
                         smell of gas, broken windows, electrical or boiler problems) outside office hours, you should ring \
                         University Security to ask them to call out an engineer to investigate the matter. Please keep a \
                         check on the matter until you are satisfied that it has been dealt with appropriately (do not simply \
-                        report the matter and assume that Security will deal with it). Document the incident on Starrez."],
+                        report the matter and assume that Security will deal with it). <br> <b>Document the incident on Starrez.</b>"],
 
 
         "damages" : ["Damages", "If damage is caused and you know who was responsible (sometimes they do admit it or tell you who did), \
                         tell the Site Office, as soon as you can, so that the bill may be issued to the correct person. \
                         Tell your RLW too so that they can maintain a record of repeat offenders.Un-attributable damage \
                         (malicious or otherwise) in a flat is charged to the flat. Charges are added to the students’ \
-                        accommodation bills.It is, of course, important that we should try to find out who has committed \
+                        accommodation bills. It is, of course, important that we should try to find out who has committed \
                         an offence, not only so that innocent people are not forced to pay for it, but in order to deter \
                         that individual and others from doing it again. The certainty of detection is more of a deterrent \
                         than the damage bill itself. This, of course, may be difficult if residents have developed a code \
@@ -222,8 +225,8 @@ def get_info(key):
                         Please include photos when documenting. <br> <br><b> Targeted </b> <br> If the vandalism is targeted at a person or group, \
                         or is offensive in nature, first call security. Do not remove it immediately as security may need to take \
                         photos but cover it up with something to prevent more people from seeing it. Security will work with \
-                        you, and if necessary, refer it to the police. Security will arrange for cleaning ASAP. Document the \
-                        situation on StarRez in as much detail as possible."],
+                        you, and if necessary, refer it to the police. Security will arrange for cleaning ASAP. <br> <b> Document the \
+                        situation on StarRez in as much detail as possible. </b>"],
 
 
         "non_immediate_medical_issue" : ["Non-Immediate Medical Issue", "If a student does not need immediate\
@@ -266,9 +269,9 @@ def get_info(key):
                         <br>• Have their friends given them water or anything to eat recently? <br>• How long have they been vomiting? \
                         <br>• How long have they been in this state? \
                         <br>• What needs to be done to ensure the safety of this student until they sober up (hospital/friends staying with them, etc.)?\
-                        <br>• Is anyone else at risk?</b>"],
+                        <br>• Is anyone else at risk?</br>"],
 
-        "recovery_position" : ["Recovery Position", "<img width:'100px' height='200px' src='{{url_for('static', filename='static/images/recovery-position')}}' alt='Main-image' />"],
+        "recovery_position" : ["Recovery Positions", "<img class='recovery_position_image' src='static/images/recovery-position.png' alt='Main-image'/>"],
 
 
         "substance_use_concerns":["Substance Use Concerns", "If a student is experiencing misusing substances (i.e., study drugs, drinking \
@@ -494,5 +497,5 @@ def get_info(key):
                         building and the people involved are not students, contact security."],
     }
 
-    info = switcher.get(key, "Try again! not found")
+    info = switcher.get(page_name, "Try again! not found")
     return info
