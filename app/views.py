@@ -69,8 +69,8 @@ def get_pages(key):
         "maintenance" : [["maintenance", "damages", "vandalism"],
                         ["Maintenance", "Damages", "Vandalism"], 
                         "Maintenance / Damage"],
-        "parties": [["parties", "smoking_in_flats", "drugs"],
-                    ["Parties", "Smoking in Flats", "Drugs"],
+        "parties": [["parties", "smoking_in_flats", "drugs", "noise_complaints"],
+                    ["Parties", "Smoking in Flats", "Drugs", "Noise Complaints"],
                     "Parties"],
         "medical_assistance" :[["non_immediate_medical_issue","accident_or_illness", "recovery_position", "over_intoxication", "substance_use_concerns"],
                                 ["Non-Immediate Medical Issue","Accidents or Illness", "Recovery Position", "Over Intoxication", "Substance Use Concerns"],
@@ -271,7 +271,7 @@ def get_info(page_name):
                         <br>• What needs to be done to ensure the safety of this student until they sober up (hospital/friends staying with them, etc.)?\
                         <br>• Is anyone else at risk?</br>"],
 
-        "recovery_position" : ["Recovery Positions", "<img class='recovery_position_image' src='static/images/recovery-position.png' alt='Main-image'/>"],
+        "recovery_position" : ["Recovery Positions", "<img class='image' src='static/images/recovery-position.png' alt='Main-image'/>"],
 
 
         "substance_use_concerns":["Substance Use Concerns", "If a student is experiencing misusing substances (i.e., study drugs, drinking \
@@ -417,6 +417,23 @@ def get_info(page_name):
                         cautioned, at the discretion of the Police. <br><br> A caution, by the way, is never spent, and remains on \
                         one’s record, so, if one is offered a caution as an alternative to prosecution, and accepts it, one is\
                         accepting that it will remain on police files and will be disclosed on Disclosure and Barring checks."],
+        
+
+        "noise_complaints" : ["Noise Complaints", "More often than not, you will be called out to deal with noise complaints arising \
+                        from unauthorised parties or anti-social behaviour. Most will also likely be drink related. <br> As a rule, after \
+                        11pm no noise should be audible outside a resident’s room, and noise does not just mean music – it includes \
+                        loud voices, banging doors, etc. In general, a friendly chat about dispersing and keeping the noise down \
+                        should do the trick. If students are uncooperative or give you grief, you should attempt to reason with \
+                        them as best you can. If they remain difficult, this is when you need to use your judgement about attempting \
+                        to diffuse the situation or to step back and to call for back- up. Remember to note their names and room numbers \
+                        for your report. <br> <br> <b> Exam Period </b> <br> During and immediately preceding examinations a Quiet Period comes into operation, when noise \
+                        should be kept to a reasonable level at all times of the day (as a rule of thumb: if it sounds loud enough to \
+                        disturb someone’s concentration then you should speak with the noisemaker); and this must be strictly observed. \
+                        If a student refuse to co-operate, you should document the situation so your Warden can follow up. <br> Some students \
+                        think that RLAs should shut down noise only if a complaint’s been received, but it should be explained to them \
+                        that it is your responsibility to ensure to keep the community safe by ensuring the rules are followed; also, \
+                        the fact that no other resident complains doesn’t necessarily mean that others are not upset by the noise. \
+                        They may be intimidated, or just not like complaining. <br> <br> <b> Document the incident on Starrez </b>"],
 
 
         "flatmate_conflict" : ["Flatmate conflicts", "If a resident comes to you with concerns about a flatmate, use the active \
@@ -428,7 +445,7 @@ def get_info(page_name):
 
 
         "physical_altercation": ["Physical Altercation", "If you come upon a situation where someone has become physically violent or there is a \
-                        physical altercation you should call security immediately. DO not touch anyone involved or put yourself in harm's way.\
+                        physical altercation you should call security immediately. Do not touch anyone involved or put yourself in harm's way.\
                         <br> You should not put yourself between two people and should only attempt to stop violent behaviour through verbal intervention \
                         if you feel comfortable. While you are waiting for security to arrive you can focus on clearing the area of others. \
                         <br><br>Document the incident on StarRez."],
@@ -471,6 +488,9 @@ def get_info(page_name):
                         some objects (bottles, etc.) can be dangerous if they hit someone, and throwing food out of the windows attracts rats.\
                         One of the most common problems within a flat is cleanliness of shared kitchens and/or bathrooms so you could suggest \
                         to the students that they have a cleaning rota."],
+
+        
+        "emergencies": ["Emergencies","Call security services."],
 
 
         "weapon" : ["Weapon", "If you see or a suspect, there may be a weapon in residence you should immediately call security and notify\
