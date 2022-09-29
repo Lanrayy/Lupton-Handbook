@@ -24,28 +24,33 @@
 
   </head>
   <body>
-    <!-- FLASHED MESSAGES -->
-    <div >{% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <ul class="flashes">
-          {% for category, message in messages %}
-            <li class="{{ category }}">{{ message }}</li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
-    </div>
-
-      <!-- Header -->
-      <div class="header-container">
-        <h1 class="app_title">Lupton Handbook</h1>
+    <div class="app-container">
+      <!-- FLASHED MESSAGES -->
+      <div >{% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
       </div>
-      
-      <!-- Page content -->
-      {% block content %}{% endblock %}
 
-    <div class="footer">
-      <p>Made by Lanre</p>
+        <!-- Header -->
+        <div class="header-container">
+          <h1 class="app_title">Lupton Handbook</h1>
+        </div>
+        
+        
+        
+          <!-- Page content -->
+          {% block content %}{% endblock %}
+        
+
+      <div class="footer">
+        <p>Made by Lanre</p>
+      </div>
     </div>
   </body>
 </html>

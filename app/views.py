@@ -170,7 +170,7 @@ def get_info(page_name):
 
 
         "fire_drill": ["Fire Drill", "These are carried out once per term and you may be asked to assist with\
-                        this. The times they are held vary but are usually when most people will be in.If you are asked to\
+                        this. The times they are held vary but are usually when most people will be in. If you are asked to\
                         help and you are available, you will meet the site staff before the drill to discuss the plan for\
                         its management. As soon as the alarm sounds, go outside with your room list and, as the students\
                         come out, make them move away from the blocks (it would be dangerous to stay close to them in a\
