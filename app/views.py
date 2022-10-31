@@ -563,8 +563,6 @@ def camera_app():
                             title = "Camera App")
 
 
-
-
 capture=0
 grey=0
 neg=0
