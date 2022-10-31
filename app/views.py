@@ -3,6 +3,7 @@ from app import app
 # import markdown
 from flaskext.markdown import Markdown
 
+# home page
 @app.route('/', methods=['GET', 'POST'])
 def index():
     #if user clicks the buttton, get button info and save data in a session
@@ -14,7 +15,8 @@ def index():
             # if menu_requested == "quick_info":
             #     session['page_requested'] = "quick_info"
             #     return redirect(url_for('info'))
-            # save info in a session and redirect to info page
+
+            # save menu requested in a session and redirect to info page
             session['menu_requested'] = menu_requested
             # flash("Succcess", 'alert, alert-success')
             return redirect(url_for('submenu'))
@@ -23,11 +25,14 @@ def index():
     return render_template('index.html',
                            title='Lupton Handbook')
 
+
+
 #Used to display all the pages in a menu
 @app.route('/submenu', methods=['GET', 'POST'])
 def submenu():
     if session["menu_requested"] == None:
         flash("Found")
+
     # get list of buttons
     page_title = get_pages(session["menu_requested"])[2]
     
@@ -45,7 +50,7 @@ def submenu():
                 return redirect(url_for('index'))
             else:
                 session['page_requested'] = page_requested # save page title
-                return redirect(url_for('info'))
+                return redirect(url_for('info')) # 
         except Exception as e:
             flash("Try again! An error occured")
     return render_template('submenu.html',
@@ -59,7 +64,7 @@ def submenu():
 # return submenu item of a main menu page
 def get_pages(key):
     switcher = {
-        #main menu  | sub menu
+        #main menu  | sub menu - e.g. inside quick info is rla_info etc
         "quick_info" : [["rla_info","security","lsmp", "lockouts"],
                         ["RLA Info","Security", "LSMP", "Lockouts"], 
                         "Quick Info"],
@@ -86,13 +91,15 @@ def get_pages(key):
                             "Flat Issues"],
         "miscellaneous":[["emergencies", "weapon", "intruders", "strangers"],
                         ["Emergencies", "Weapon", "Intruders", "Strangers in the building"],
-                        "Miscellanous"]
+                        "Miscellanous"],
     }
     
     pages = switcher.get(key, ["Try again! not found"])
     return pages
 
-# Info page
+
+
+# Info page - the page with the text
 @app.route('/info', methods=['GET', 'POST'])
 def info():
     # retrieve info from session
@@ -114,6 +121,12 @@ def info():
                             page_title = page_title,
                             page_content = page_content)
 
+#################################################################################################################
+##
+## functions
+##
+#################################################################################################################
+
 # ON the info page
 # This function is used on the info page, it returns the text for the specific page
 def get_info(page_name):
@@ -127,7 +140,8 @@ def get_info(page_name):
                         3474 - Intruder alarm code (Site office) <br> 8L153/ 948: room master key <br>\
                         550 key: fire key <br> SVS: padlocks around campus (front gate padlock) <br><br> \
                         <b>SITE PHONE:</b> <br> 0000- phone password <br> Then 83860 <br> (BEN’s ACCOUNT) <br> \
-                        <br> <b>SITE MAP<b> <br> <img src='static/images/lupton_sitemap.png' class='image' alt='Lupton-Site-Map' /> "],
+                        <br> <b>SITE MAP<b> <br> <img src='static/images/lupton_sitemap.png' class='image' alt='Lupton-Site-Map' /> \
+                        <br><br> <b>FIRE ALARM RELAY PANELS<b> <br> <img src='static/images/fire_panels.png' class='image' alt='Lupton-Site-Map' />  "],
         
 
         "lockouts" : ["Lockouts", "If you need to deal with a lock out, before you can let a student back into their \
@@ -166,7 +180,8 @@ def get_info(page_name):
         "fire_alarm" : ["Fire Alarm", "When the fire alarm goes off, check the buzzer for the block with the right panel. <br> <br> \
                         Go to the panel and identify the room. Assist students with leaving the building to the assembly point.\
                         If it is not your rota ’ed night and the alarm sounds, you should call the duty RLA, who will attend and investigate. \
-                         Wait for security to arrive. Once the alarm has been shut off, <br> <b> Document the incident on Starrez. </b>"],
+                        Wait for security to arrive. Once the alarm has been shut off, <br> <b> Document the incident on Starrez. </b>\
+                        <br><br> <b>FIRE ALARM RELAY PANELS<b> <br> <img src='static/images/fire_panels.png' class='image' alt='Lupton-Site-Map' />"],
 
 
         "fire_drill": ["Fire Drill", "These are carried out once per term and you may be asked to assist with\
@@ -515,6 +530,9 @@ def get_info(page_name):
                         Call security and notify them that you’ve seen a stranger in the building. Be mindful of the direction the\
                         person may have travelled to help track them down. If you notice a public disturbance happening outside your\
                         building and the people involved are not students, contact security."],
+
+
+        "final_year" : ["Final year", "This is the final year page. This is what should be seen."]
     }
 
     info = switcher.get(page_name, "Try again! not found")
