@@ -526,3 +526,4 @@ def get_info(page_name):
 
     info = switcher.get(page_name, "Try again! not found")
     return info
+
